@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShopHub</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">ShopHub</a>
+
+       <div class="d-flex">
+    <select class="form-select me-2" onchange="goToCategory(this.value)">
+        <option value="">Select Category</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <option value="accessories">Accessories</option>
+        <option value="footwear">Footwear</option>
+    </select>
+</div>
+
+
+
+        <div>
+            <a href="login.html" class="text-white me-3">Login</a>
+
+            <a href="cart.html" class="text-white">Cart <span id="cartCount">0</span></a>
+
+        </div>
+        <a href="#" class="text-white me-3" onclick="logout()">Logout</a>
+
+
+    </div>
+</nav>
+
+<!-- HERO BANNER -->
+<div class="container mt-3">
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="https://okcredit-blog-images-prod.storage.googleapis.com/2021/04/ecommerce3-1.jpg" class="d-block w-100 banner">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://www.portotheme.com/wp-content/uploads/2024/08/image1-8.jpg" class="d-block w-100 banner">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://img.freepik.com/premium-photo/ecommerce-background_965427-2217.jpg?w=2000" class="d-block w-100 banner">
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+</div>
+<!-- CATEGORIES -->
+<div class="container mt-4 text-center">
+
+    <a href="products.html?cat=all" class="btn btn-outline-primary me-2">All</a>
+    <a href="products.html?cat=electronics" class="btn btn-outline-primary me-2">Electronics</a>
+    <a href="products.html?cat=clothing" class="btn btn-outline-primary me-2">Clothing</a>
+    <a href="products.html?cat=accessories" class="btn btn-outline-primary me-2">Accessories</a>
+    <a href="products.html?cat=footwear" class="btn btn-outline-primary">Footwear</a>
+
+</div>
+
+<!-- DISCOUNTS -->
+<div class="container mt-5 text-center">
+
+    <h3 class="mb-4">Hot Deals 🔥</h3>
+
+    <div class="row">
+
+        <!-- Electronics -->
+        <div class="col-md-3 col-sm-6 mb-3">
+            <a href="products.html?cat=electronics" class="text-decoration-none text-dark">
+                <div class="discount-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" class="discount-img">
+                    <h5 class="mt-2">50% OFF</h5>
+                    <p>Electronics</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Clothing -->
+        <div class="col-md-3 col-sm-6 mb-3">
+            <a href="products.html?cat=clothing" class="text-decoration-none text-dark">
+                <div class="discount-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/892/892458.png" class="discount-img">
+                    <h5 class="mt-2">40% OFF</h5>
+                    <p>Clothing</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Accessories -->
+        <div class="col-md-3 col-sm-6 mb-3">
+            <a href="products.html?cat=accessories" class="text-decoration-none text-dark">
+                <div class="discount-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" class="discount-img">
+                    <h5 class="mt-2">30% OFF</h5>
+                    <p>Accessories</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Footwear -->
+        <div class="col-md-3 col-sm-6 mb-3">
+            <a href="products.html?cat=footwear" class="text-decoration-none text-dark">
+                <div class="discount-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1041/1041888.png" class="discount-img">
+                    <h5 class="mt-2">20% OFF</h5>
+                    <p>Footwear</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer class="bg-primary text-white mt-5 pt-4 pb-3">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- About Us -->
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>
+                    ShopHub is a modern e-commerce platform designed to provide quality products at affordable prices.
+                    We focus on customer satisfaction, fast delivery, and secure shopping experience.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="products.html?cat=all" class="text-white">Products</a></li>
+                    <li><a href="#" class="text-white">Cart</a></li>
+                    <li><a href="#" class="text-white">Login</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+
+                <a href="#" class="text-white me-2">Facebook</a><br>
+                <a href="#" class="text-white me-2">Instagram</a><br>
+                <a href="#" class="text-white me-2">Twitter (X)</a><br>
+                <a href="#" class="text-white me-2">LinkedIn</a>
+
+            </div>
+
+        </div>
+
+        <hr class="bg-white">
+
+        <p class="text-center mb-0">© 2026 ShopHub. All rights reserved.</p>
+
+    </div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

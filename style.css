@@ -1,0 +1,105 @@
+/* NAVBAR */
+.custom-navbar {
+    background: linear-gradient(90deg, #0f2027, #04354a);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+    color: white !important;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #ffd700 !important;
+}
+
+/* BANNER */
+.banner {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* CATEGORY */
+.category-bar {
+    margin-top: 20px;
+}
+
+.category-bar .btn {
+    border-radius: 25px;
+    padding: 8px 18px;
+    font-weight: 500;
+}
+
+/* DISCOUNT CARDS */
+.discount-card {
+    background: linear-gradient(135deg, #e6f0ff, #cce0ff);
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.discount-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    color: white;
+}
+
+.discount-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+    transition: 0.3s;
+    border-radius: 12px;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: auto;
+}
+
+/* BUTTON */
+button {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #2193b0, #6dd5ed);
+    color: white !important;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #1a7c94, #57c3dc);
+}
+
+/* FOOTER */
+footer {
+    background: #022939;
+    color: white;
+    padding: 20px;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
