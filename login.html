@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Login / Signup</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -13,32 +14,78 @@
 
     <!-- LOGIN FORM -->
     <div id="loginForm">
+
         <h5>Login</h5>
 
-        <input type="text" id="loginUser" class="form-control mb-2" placeholder="Username">
-        <input type="password" id="loginPass" class="form-control mb-2" placeholder="Password">
+        <input
+            type="text"
+            id="loginUser"
+            class="form-control mb-2"
+            placeholder="Username"
+        >
 
-        <button class="btn btn-primary w-100" onclick="login()">Login</button>
+        <input
+            type="password"
+            id="loginPass"
+            class="form-control mb-2"
+            placeholder="Password"
+        >
+
+        <button
+            id="loginBtn"
+            class="btn btn-primary w-100"
+            onclick="login()"
+        >
+            Login
+        </button>
+
+        <p id="loginMessage" class="text-center mt-3 fw-bold"></p>
 
         <p class="mt-3 text-center">
             Don't have an account?
-            <a href="#" onclick="showSignup()">Signup</a>
+
+            <a href="#" onclick="showSignup()">
+                Signup
+            </a>
         </p>
+
     </div>
 
     <!-- SIGNUP FORM -->
     <div id="signupForm" style="display:none;">
+
         <h5>Signup</h5>
 
-        <input type="text" id="signupUser" class="form-control mb-2" placeholder="Username">
-        <input type="password" id="signupPass" class="form-control mb-2" placeholder="Password">
+        <input
+            type="text"
+            id="signupUser"
+            class="form-control mb-2"
+            placeholder="Username"
+        >
 
-        <button class="btn btn-success w-100" onclick="signup()">Signup</button>
+        <input
+            type="password"
+            id="signupPass"
+            class="form-control mb-2"
+            placeholder="Password"
+        >
+
+        <button
+            id="signupBtn"
+            class="btn btn-success w-100"
+            onclick="signup()"
+        >
+            Signup
+        </button>
 
         <p class="mt-3 text-center">
             Already have an account?
-            <a href="#" onclick="showLogin()">Login</a>
+
+            <a href="#" onclick="showLogin()">
+                Login
+            </a>
         </p>
+
     </div>
 
 </div>
@@ -47,55 +94,89 @@
 
 // SWITCH FORMS
 function showSignup() {
+
     document.getElementById("loginForm").style.display = "none";
+
     document.getElementById("signupForm").style.display = "block";
 }
 
 function showLogin() {
+
     document.getElementById("signupForm").style.display = "none";
+
     document.getElementById("loginForm").style.display = "block";
 }
 
 // SIGNUP FUNCTION
 function signup() {
 
-    let user = document.getElementById("signupUser").value;
-    let pass = document.getElementById("signupPass").value;
+    let user =
+        document.getElementById("signupUser").value;
+
+    let pass =
+        document.getElementById("signupPass").value;
 
     if (user === "" || pass === "") {
+
         alert("Fill all fields");
         return;
     }
 
     // store user
-    let newUser = { username: user, password: pass };
+    let newUser = {
+        username: user,
+        password: pass
+    };
 
-    localStorage.setItem("user", JSON.stringify(newUser));
+    localStorage.setItem(
+        "user",
+        JSON.stringify(newUser)
+    );
 
     alert("Signup successful! Please login.");
+
     showLogin();
 }
 
 // LOGIN FUNCTION
 function login() {
 
-    let user = document.getElementById("loginUser").value;
-    let pass = document.getElementById("loginPass").value;
+    let user =
+        document.getElementById("loginUser").value;
 
-    let storedUser = JSON.parse(localStorage.getItem("user"));
+    let pass =
+        document.getElementById("loginPass").value;
+
+    let storedUser =
+        JSON.parse(localStorage.getItem("user"));
 
     if (!storedUser) {
+
         alert("No account found. Please signup.");
+
         return;
     }
 
-    if (user === storedUser.username && pass === storedUser.password) {
-        localStorage.setItem("isLoggedIn", "true");
+    if (
+        user === storedUser.username &&
+        pass === storedUser.password
+    ) {
 
-        alert("Login successful!");
-        window.location.href = "index.html";
+        localStorage.setItem(
+            "isLoggedIn",
+            "true"
+        );
+
+        document.getElementById("loginMessage")
+            .innerText = "Login successful!";
+
+        // OPTIONAL REDIRECT
+        // window.location.href = "index.html";
+
     } else {
-        alert("Invalid credentials");
+
+        document.getElementById("loginMessage")
+            .innerText = "Invalid credentials";
     }
 }
 
